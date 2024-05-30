@@ -50,7 +50,12 @@ public class DiningPhilosophers {
 
     if (!input.trim().isEmpty()) {
       try {
-        eatingTime = Integer.parseInt(input.trim());
+        int eatingTime1 = Integer.parseInt(input.trim());
+        if (eatingTime1 <= 0) {
+          throw new NumberFormatException();
+        } else {
+          eatingTime = eatingTime1;
+        }
         saveConfig(eatingTime, configFile);
       } catch (NumberFormatException e) {
         System.out.println("Invalid input. Using default config value: " + eatingTime);
