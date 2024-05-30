@@ -60,9 +60,8 @@ public class Philosopher extends Thread {
    */
   private void eat() throws InterruptedException {
     synchronized (leftFork) {
-      System.out.println("Philosopher " + id + " picked up left fork " + leftFork.getId());
       synchronized (rightFork) {
-        System.out.println("Philosopher " + id + " picked up right fork " + rightFork.getId());
+        System.out.println("Philosopher " + id + " picked up forks");
         System.out.println("Philosopher " + id + " is eating.");
         Thread.sleep(eatingTime);
         System.out.println("Philosopher " + id + " is done eating.");
